@@ -14,7 +14,69 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      guestbook_messages: {
+        Row: {
+          author: string
+          color_index: number
+          content: string
+          created_at: string
+          id: string
+        }
+        Insert: {
+          author: string
+          color_index?: number
+          content: string
+          created_at?: string
+          id?: string
+        }
+        Update: {
+          author?: string
+          color_index?: number
+          content?: string
+          created_at?: string
+          id?: string
+        }
+        Relationships: []
+      }
+      rsvp_submissions: {
+        Row: {
+          attendance: string
+          companion: string | null
+          created_at: string
+          guest_count: number | null
+          id: string
+          meal_preference: string | null
+          message: string | null
+          name: string
+          phone: string | null
+          side: string | null
+        }
+        Insert: {
+          attendance: string
+          companion?: string | null
+          created_at?: string
+          guest_count?: number | null
+          id?: string
+          meal_preference?: string | null
+          message?: string | null
+          name: string
+          phone?: string | null
+          side?: string | null
+        }
+        Update: {
+          attendance?: string
+          companion?: string | null
+          created_at?: string
+          guest_count?: number | null
+          id?: string
+          meal_preference?: string | null
+          message?: string | null
+          name?: string
+          phone?: string | null
+          side?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
