@@ -72,14 +72,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "엄희승 ❤️ 정원재 결혼합니다." },
+      { name: "description", content: "2026.10.24 (토) 18시
+루이비스컨벤션 송파문정" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "엄희승 ❤️ 정원재 결혼합니다." },
+      { property: "og:description", content: "2026.10.24 (토) 18시
+루이비스컨벤션 송파문정" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "엄희승 ❤️ 정원재 결혼합니다." },
+      { name: "twitter:description", content: "2026.10.24 (토) 18시
+루이비스컨벤션 송파문정" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/aae39272-808e-440d-9ad5-7a2e96cb79eb/id-preview-7202ca43--1fd602e7-3a37-43b7-8321-f136f2f03c35.lovable.app-1779606590348.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/aae39272-808e-440d-9ad5-7a2e96cb79eb/id-preview-7202ca43--1fd602e7-3a37-43b7-8321-f136f2f03c35.lovable.app-1779606590348.png" },
     ],
     links: [
       {
