@@ -1,0 +1,1 @@
+DROP POLICY IF EXISTS "Anyone can read rsvp" ON public.rsvp_submissions;
