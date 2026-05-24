@@ -73,7 +73,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "엄희승 ❤️ 정원재 결혼합니다" },
-      { name: "description", content: "2026.10.24 (토) 18시 루이비스컨벤션 송파문정" },
+      { name: "description", content: "2026.10.24 (토) 18시\n루이비스컨벤션 송파문정" },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "엄희승 ❤️ 정원재 결혼합니다" },
       { property: "og:description", content: "2026.10.24 (토) 18시 루이비스컨벤션 송파문정" },
