@@ -3,19 +3,21 @@ import { MapPin, Car, Bus, Train } from "lucide-react";
 const ADDRESS = "서울 송파구 법원로9길 26 H비즈니스파크 D동 루이비스컨벤션 B1층";
 
 export function Location() {
-  return (
+return (
     <section className="px-8 py-12 text-center">
       <p className="text-xs tracking-[0.3em] text-lime mb-2">LOCATION</p>
       <h2 className="text-xl mb-6">오시는 길</h2>
 
+      {/* --- 구글 지도로 수정된 부분 시작 --- */}
       <div className="rounded-2xl overflow-hidden shadow-lg mb-4 bg-card">
         <iframe
-          title="naver map"
-          src="https://map.naver.com/p/entry/place/1593629691?c=17.99,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605242141&locale=ko&svcName=map_pcv5"
+          title="google map"
+          src="https://maps.google.com/maps?q=서울 송파구 법원로9길 26 루이비스컨벤션&t=&z=16&ie=UTF8&iwloc=&output=embed"
           className="w-full h-56 border-0"
           loading="lazy"
         />
       </div>
+      {/* --- 구글 지도로 수정된 부분 끝 --- */}
 
       <p className="font-serif-ko text-sm text-foreground/90 leading-relaxed">{ADDRESS}</p>
       <p className="text-xs text-foreground/60 mt-1">루이비스컨벤션 · B1층</p>
