@@ -1,5 +1,13 @@
-const photos = ["/1.jpg", "/2.jpg", "/3.jpg", "/4.jpg", "/5.jpg", "/6.jpg", "/7.jpg", "/8.jpg"];
-
+const photos = [
+  "https://pub-80239440eb7a4b0f866e6b54bd8660f9.r2.dev/1.jpg",
+  "https://pub-80239440eb7a4b0f866e6b54bd8660f9.r2.dev/2.jpg",
+  "https://pub-80239440eb7a4b0f866e6b54bd8660f9.r2.dev/3.jpg",
+  "https://pub-80239440eb7a4b0f866e6b54bd8660f9.r2.dev/4.jpg",
+  "https://pub-80239440eb7a4b0f866e6b54bd8660f9.r2.dev/5.jpg",
+  "https://pub-80239440eb7a4b0f866e6b54bd8660f9.r2.dev/6.jpg",
+  "https://pub-80239440eb7a4b0f866e6b54bd8660f9.r2.dev/7.jpg",
+  "https://pub-80239440eb7a4b0f866e6b54bd8660f9.r2.dev/8.jpg",
+];
 export function Gallery() {
   return (
     <section className="py-12">
