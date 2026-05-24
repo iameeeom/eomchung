@@ -15,16 +15,10 @@ const photos = [
   "https://pub-80239440eb7a4b0f866e6b54bd8660f9.r2.dev/7.jpg",
   "https://pub-80239440eb7a4b0f866e6b54bd8660f9.r2.dev/8.jpg",
 ];
-// 메인 카드를 탭했을 때 다음 장으로 넘기는 함수
-  const handleCardClick = (index: number) => {
+const handleCardClick = (index: number) => {
     if (index === currentIndex && currentIndex < photos.length) {
       setCurrentIndex((prev) => prev + 1);
     }
-  };
-
-  // 팜플렛 미니 썸네일을 눌렀을 때 원하는 장으로 이동하는 함수
-  const handleThumbnailClick = (index: number) => {
-    setCurrentIndex(index);
   };
 
   return (
@@ -32,31 +26,33 @@ const photos = [
       <div className="text-center mb-8">
         <p className="text-xs tracking-[0.3em] text-lime mb-2">GALLERY</p>
         <h2 className="text-xl">우리의 순간</h2>
-        <p className="text-xs text-foreground/40 mt-1">카드를 넘기거나 하단 팜플렛을 눌러보세요</p>
+        <p className="text-xs text-foreground/40 mt-1">카드를 터치해 왼쪽으로 넘겨보세요</p>
       </div>
 
-      {/* [상단] 카드 스택 영역 */}
-      <div className="relative w-[300px] h-[430px] flex items-center justify-center mb-8">
+      {/* [상단] 가로 스택 카드 영역 */}
+      <div className="relative w-[280px] h-[420px] flex items-center justify-start mb-8">
         {photos.map((src, index) => {
           const isGone = index < currentIndex;
           const isTop = index === currentIndex;
           
+          // 핵심: 이제 아래가 아니라 '오른쪽(translateX)'으로 잔상이 생깁니다!
           const stackOrder = index - currentIndex;
-          const translateY = stackOrder >= 0 && stackOrder < 3 ? stackOrder * 10 : 0;
-          const scale = stackOrder >= 0 && stackOrder < 3 ? 1 - stackOrder * 0.04 : 0.92;
-          const opacity = stackOrder >= 0 && stackOrder < 3 ? 1 - stackOrder * 0.3 : 0;
+          const translateX = stackOrder >= 0 && stackOrder < 3 ? stackOrder * 14 : 0;
+          const scale = stackOrder >= 0 && stackOrder < 3 ? 1 - stackOrder * 0.05 : 0.9;
+          const opacity = stackOrder >= 0 && stackOrder < 3 ? 1 - stackOrder * 0.35 : 0;
 
           return (
             <div
               key={index}
               onClick={() => handleCardClick(index)}
               style={{
+                // 넘어간 카드는 왼쪽(-150%)으로 휙 날아가고, 대기 카드는 우측(translateX)에 대기!
                 transform: isGone 
-                  ? "translateX(-150%) rotate(-15deg)" 
-                  : `translateY(${translateY}px) scale(${scale})`,
+                  ? "translateX(-150%) rotate(-10deg)" 
+                  : `translateX(${translateX}px) scale(${scale})`,
                 opacity: isGone ? 0 : opacity,
                 zIndex: photos.length - index,
-                transition: "all 0.45s cubic-bezier(0.25, 1, 0.5, 1)",
+                transition: "all 0.4s cubic-bezier(0.25, 1, 0.5, 1)",
               }}
               className="absolute w-full h-full rounded-2xl bg-secondary/30 shadow-xl overflow-hidden cursor-pointer origin-bottom-left select-none"
             >
@@ -77,9 +73,9 @@ const photos = [
           );
         })}
 
-        {/* 모든 사진을 다 넘겼을 때 웰컴 메시지 */}
+        {/* 모든 사진 끝났을 때 정돈된 메시지 */}
         {currentIndex >= photos.length && (
-          <div className="text-center animate-in fade-in zoom-in duration-300 z-10">
+          <div className="w-full text-center animate-in fade-in zoom-in duration-300 z-10">
             <p className="text-sm text-foreground/60 mb-2">사진을 모두 확인하셨습니다 ✨</p>
             <button
               onClick={() => setCurrentIndex(0)}
@@ -91,16 +87,14 @@ const photos = [
         )}
       </div>
 
-      {/* [하단] 미니 팜플렛 인디케이터 */}
+      {/* [하단] 미니 팜플렛 인디케이터 (기존 기능 완벽 유지) */}
       <div className="flex gap-1.5 px-6 max-w-full overflow-x-auto scrollbar-none py-2">
         {photos.map((src, index) => {
-          // 현재 활성화된(맨 위) 사진인지 체크
           const isActive = index === (currentIndex >= photos.length ? photos.length - 1 : currentIndex);
-          
           return (
             <button
               key={index}
-              onClick={() => handleThumbnailClick(index)}
+              onClick={() => setCurrentIndex(index)}
               className={`relative w-11 h-16 rounded-md overflow-hidden flex-shrink-0 transition-all duration-300 border-2 ${
                 isActive 
                   ? "border-lime scale-110 shadow-md ring-2 ring-lime/20" 
