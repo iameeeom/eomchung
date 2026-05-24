@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "2026.10.24 (토) 18시\n\n루이비스컨벤션 송파문정" },
       { property: "og:title", content: "엄희승 ❤️ 정원재 결혼합니다" },
       { property: "og:description", content: "2026.10.24 (토) 18시\n\n루이비스컨벤션 송파문정" },
-      { property: "og:image", content: "https://eomchung.iameeeom.workers.dev/ogimage.jpg"},
+      { property: "og:image", content: "https://eomchung.pages.dev/ogimage.jpg"},
     ],
   }),
   component: Index,
