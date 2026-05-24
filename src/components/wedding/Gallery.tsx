@@ -9,7 +9,7 @@ export function Gallery() {
         {[1, 2, 3].map((i) => (
           <div
             key={i}
-            className="h-[420px] w-[280px] flex-shrink-0 rounded-2xl snap-center shadow-lg bg-black/20 flex items-center justify-center"
+            className="h-[420px] w-[280px] flex-shrink-0 rounded-2xl snap-center shadow-lg bg-secondary/30 flex items-center justify-center"
           >
             <span className="text-lime/40 font-mono text-sm">photo.png</span>
           </div>
