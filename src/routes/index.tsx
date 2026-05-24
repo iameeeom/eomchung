@@ -17,9 +17,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "엄희승 ❤️ 정원재 결혼합니다 · 2026.10.24" },
-      { name: "description", content: "7년의 기다림이 이뤄낸 아름다운 계절의 시작. 2026년 10월 24일 오후 6시, 루이비스컨벤션." },
+      { name: "description", content: "2026.10.24 (토) 18시\n\n루이비스컨벤션 송파문정" },
       { property: "og:title", content: "엄희승 ❤️ 정원재 결혼합니다" },
-      { property: "og:description", content: "2026.10.24 SAT 6PM · 루이비스컨벤션" },
+      { property: "og:description", content: "2026.10.24 (토) 18시\n\n루이비스컨벤션 송파문정" },
     ],
   }),
   component: Index,
