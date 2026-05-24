@@ -35,7 +35,7 @@ export function RSVP() {
       meal_preference: meal,
     });
     setSubmitting(false);
-    if (error) { toast.error("전송 실패: " + error.message); return; }
+    if (error) { console.error("RSVP insert error:", error); toast.error("전송에 실패했습니다. 잠시 후 다시 시도해주세요."); return; }
     if (hideToday) localStorage.setItem(HIDE_KEY, new Date().toDateString());
     toast.success("참석 의사가 전달되었습니다 ✨");
     setOpen(false);
