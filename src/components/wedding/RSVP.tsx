@@ -17,6 +17,8 @@ export function RSVP() {
   const [hideToday, setHideToday] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
+// 주석 처리된 모습
+  /*
   useEffect(() => {
     const today = new Date().toDateString();
     if (typeof window !== "undefined" && localStorage.getItem(HIDE_KEY) !== today) {
@@ -24,6 +26,7 @@ export function RSVP() {
       return () => clearTimeout(t);
     }
   }, []);
+  */
 
   const submit = async () => {
     if (!name.trim()) { toast.error("성함을 입력해주세요"); return; }
