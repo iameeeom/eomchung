@@ -64,9 +64,9 @@ export function Guestbook() {
         {[col1, col2].map((col, ci) => (
           <div key={ci} className="space-y-3">
             {col.map((m) => (
-              <div key={m.id} className={`${COLORS[m.color_index % COLORS.length]} ${ROTATIONS[m.color_index % ROTATIONS.length]} text-stone-800 p-3 rounded-lg shadow-md transition hover:rotate-0 hover:scale-[1.03]`}>
+              <div key={m.id} className={`${COLORS[m.color_index % COLORS.length]} ${ROTATIONS[m.color_index % ROTATIONS.length]} text-card-foreground p-3 rounded-lg shadow-md transition hover:rotate-0 hover:scale-[1.03]`}>
                 <p className="text-xs leading-relaxed whitespace-pre-wrap break-words font-serif-ko">{m.content}</p>
-                <p className="text-[10px] text-stone-700 mt-2 font-medium">— {m.author}</p>
+                <p className="text-[10px] text-muted-foreground mt-2 font-medium">— {m.author}</p>
               </div>
             ))}
           </div>

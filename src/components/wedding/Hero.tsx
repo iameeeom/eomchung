@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 export function Hero() {
   return (
     <section className="relative h-[100svh] w-full overflow-hidden">
-      <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+      <div className="absolute inset-0 flex items-center justify-center bg-secondary/30">
         <span className="text-lime/40 font-mono text-sm">photo.png</span>
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background/90" />
