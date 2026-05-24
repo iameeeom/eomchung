@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, MessageSquare, X } from "lucide-react";
+import { Phone, MessageSquare } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 const groom = [
@@ -47,9 +47,6 @@ export function Contact() {
           <div className="relative px-6 pt-8 pb-6"
             style={{ backgroundImage: "radial-gradient(circle, oklch(0.88 0.14 115 / 0.1) 1px, transparent 1.5px)", backgroundSize: "16px 16px" }}>
             <DialogTitle className="text-center font-serif-ko text-lg text-foreground">연락처</DialogTitle>
-            <button onClick={() => setOpen(false)} className="absolute right-4 top-4 text-lime">
-              <X className="h-5 w-5" />
-            </button>
             <div className="grid grid-cols-2 gap-4 mt-6 text-left">
               <div>
                 <p className="text-xs text-lime mb-2 text-center">신랑측</p>

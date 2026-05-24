@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { X } from "lucide-react";
+
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
@@ -59,7 +59,7 @@ export function RSVP() {
         <DialogContent className="max-w-[440px] bg-popover border-foreground/10 p-0 overflow-hidden"
           style={{ animation: "slideUp 0.35s ease-out" }}>
           <div className="px-6 pt-7 pb-6">
-            <button onClick={() => setOpen(false)} className="absolute right-4 top-4 text-lime"><X className="h-5 w-5" /></button>
+            
             <DialogTitle className="font-serif-ko text-lg text-foreground text-center mb-1">참석 의사 전달</DialogTitle>
             <p className="text-xs text-foreground/60 text-center mb-5">소중한 시간 내어주셔서 감사합니다</p>
 
