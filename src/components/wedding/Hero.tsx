@@ -1,10 +1,11 @@
-import hero from "@/assets/hero.jpg";
 import { ChevronDown } from "lucide-react";
 
 export function Hero() {
   return (
     <section className="relative h-[100svh] w-full overflow-hidden">
-      <img src={hero} alt="엄희승 정원재 결혼식" className="absolute inset-0 h-full w-full object-cover" width={768} height={1024} />
+      <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+        <span className="text-lime/40 font-mono text-sm">photo.png</span>
+      </div>
       <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background/90" />
       <div className="absolute inset-0 flex flex-col items-center justify-end pb-24 px-6 text-center">
         <p className="text-xs tracking-[0.4em] text-lime mb-3 fade-in-up">WE ARE GETTING MARRIED</p>

@@ -1,5 +1,3 @@
-import venue from "@/assets/venue.jpg";
-
 export function Venue() {
   return (
     <section className="px-8 py-12">
@@ -8,7 +6,9 @@ export function Venue() {
         <h2 className="text-xl">예식장 안내</h2>
       </div>
       <div className="bg-card text-card-foreground rounded-2xl overflow-hidden shadow-lg">
-        <img src={venue} alt="venue" loading="lazy" width={1024} height={768} className="w-full h-48 object-cover" />
+        <div className="w-full h-48 bg-black/20 flex items-center justify-center">
+          <span className="text-lime/40 font-mono text-sm">photo.png</span>
+        </div>
         <div className="p-5 space-y-4">
           <div>
             <p className="font-serif-ko text-base">루이비스컨벤션</p>
