@@ -20,20 +20,25 @@ export function Location() {
       <p className="font-serif-ko text-sm text-foreground/90 leading-relaxed">{ADDRESS}</p>
       <p className="text-xs text-foreground/60 mt-1">루이비스컨벤션 · B1층</p>
 
+      {/* --- 버튼 수정된 부분 시작 --- */}
       <div className="flex gap-2 mt-5">
         <a
-          href={`https://map.naver.com/v5/search/${encodeURIComponent(ADDRESS)}`}
+          href="여기에_네이버_지도_URL_넣기"
           target="_blank" rel="noreferrer"
-          className="flex-1 py-3 rounded-xl border border-lime/40 text-lime text-sm hover:bg-lime hover:text-lime-foreground transition"
-        >네이버 지도</a>
-        <a
-          href={`https://map.kakao.com/?q=${encodeURIComponent(ADDRESS)}`}
-          target="_blank" rel="noreferrer"
-          className="flex-1 py-3 rounded-xl bg-lime text-lime-foreground text-sm font-medium hover:opacity-90 transition"
+          className="flex-1 py-3 rounded-xl border border-lime/40 text-lime text-sm hover:bg-lime hover:text-lime-foreground transition text-center"
         >
-          <MapPin className="inline h-4 w-4 mr-1" />길찾기
+          네이버 지도
+        </a>
+        <a
+          href="여기에_카카오_지도_URL_넣기"
+          target="_blank" rel="noreferrer"
+          className="flex-1 py-3 rounded-xl bg-lime text-lime-foreground text-sm font-medium hover:opacity-90 transition text-center flex items-center justify-center"
+        >
+          <MapPin className="inline h-4 w-4 mr-1" />
+          카카오 지도
         </a>
       </div>
+      {/* --- 버튼 수정된 부분 끝 --- */}
 
       <div className="mt-6 text-left bg-secondary/40 rounded-xl p-4 space-y-3">
         <div className="flex gap-3">
