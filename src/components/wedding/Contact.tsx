@@ -3,14 +3,14 @@ import { Phone, MessageSquare } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 const groom = [
-  { rel: "신랑", name: "엄희승", phone: "010-1234-5678" },
-  { rel: "신랑 아버지", name: "엄홍식", phone: "010-1111-2222" },
-  { rel: "신랑 어머니", name: "고현경", phone: "010-3333-4444" },
+  { rel: "신랑", name: "엄희승", phone: "010-3038-9510" },
+  { rel: "신랑 아버지", name: "엄홍식", phone: "010-6244-9510" },
+  { rel: "신랑 어머니", name: "고현경", phone: "010-2260-9510" },
 ];
 const bride = [
-  { rel: "신부", name: "정원재", phone: "010-8765-4321" },
-  { rel: "신부 아버지", name: "정해정", phone: "010-5555-6666" },
-  { rel: "신부 어머니", name: "지유신", phone: "010-7777-8888" },
+  { rel: "신부", name: "정원재", phone: "010-9124-5383" },
+  { rel: "신부 아버지", name: "정해정", phone: "010-3735-5383" },
+  { rel: "신부 어머니", name: "지유신", phone: "010-5717-5383" },
 ];
 
 function PersonRow({ rel, name, phone }: { rel: string; name: string; phone: string }) {

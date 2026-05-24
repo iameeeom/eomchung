@@ -3,11 +3,17 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Copy, Check } from "lucide-react";
 import { toast } from "sonner";
 
+// 데이터를 이렇게 계층형으로 관리하면 편합니다!
 const groomAcc = [
-  { name: "엄희승 (신랑)", bank: "국민은행", number: "123456-78-9012345" },
+  { name: "엄희승 (신랑)", bank: "하나은행", number: "589-910287-07007" },
+  { name: "엄홍식 (신랑 부)", bank: "국민은행", number: "111-222-333333" },
+  { name: "고현경 (신랑 모)", bank: "우리은행", number: "444-555-666666" },
 ];
+
 const brideAcc = [
-  { name: "정원재 (신부)", bank: "신한은행", number: "987-65-4321098" },
+  { name: "정원재 (신부)", bank: "신한은행", number: "110-583-524935" },
+  { name: "정해정 (신부 부)", bank: "기업은행", number: "777-888-999999" },
+  { name: "지유신 (신부 모)", bank: "기업은행", number: "777-888-999999" },
 ];
 
 function Row({ name, bank, number }: { name: string; bank: string; number: string }) {
@@ -41,11 +47,11 @@ export function Account() {
       <Accordion type="single" collapsible className="space-y-3">
         <AccordionItem value="groom" className="bg-secondary/40 rounded-xl px-4 border-0">
           <AccordionTrigger className="text-sm hover:no-underline text-foreground"><span className="text-lime mr-2">신랑측</span> 계좌번호</AccordionTrigger>
-          <AccordionContent>{groomAcc.map(a => <Row key={a.name} {...a} />)}</AccordionContent>
+          <AccordionContent>{groomAcc.map(a => <Row key={a.number} {...a} />)}</AccordionContent>
         </AccordionItem>
         <AccordionItem value="bride" className="bg-secondary/40 rounded-xl px-4 border-0">
           <AccordionTrigger className="text-sm hover:no-underline text-foreground"><span className="text-lime mr-2">신부측</span> 계좌번호</AccordionTrigger>
-          <AccordionContent>{brideAcc.map(a => <Row key={a.name} {...a} />)}</AccordionContent>
+          <AccordionContent>{brideAcc.map(a => <Row key={a.number} {...a} />)}</AccordionContent>
         </AccordionItem>
       </Accordion>
     </section>
