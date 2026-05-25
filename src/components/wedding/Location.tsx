@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { MapPin, Car, Bus, Train } from "lucide-react";
 
 declare global {
@@ -10,61 +10,70 @@ declare global {
 const ADDRESS = "서울 송파구 법원로9길 26 H비즈니스파크 D동 루이비스컨벤션 B1층";
 
 export function Location() {
+  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+
   useEffect(() => {
-    // 1. 네이버 라이브러리 로드 체크
-    if (!window.naver || !window.naver.maps) return;
+    // 1. 이미 스크립트가 로드되어 있다면 재실행 방지
+    if (window.naver && window.naver.maps) {
+      setIsScriptLoaded(true);
+      return;
+    }
+
+    // 2. 🚀 네이버 지도 스크립트를 동적으로 직접 헤드에 꽂아버립니다.
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    // ⚠️여기에 Heeseung님이 발급받으신 진짜 ID '5v6tozs9n6'를 완벽하게 고정해 놨습니다.
+    script.src = "https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5v6tozs9n1";
+    script.async = true;
+
+    // 스크립트 로드가 완료되면 상태를 true로 바꿉니다.
+    script.onload = () => {
+      setIsScriptLoaded(true);
+    };
+
+    document.head.appendChild(script);
+
+    return () => {
+      // 컴포넌트가 언마운트될 때 안전하게 정리
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
+
+  // 3. 네이버 지도 스크립트 로드가 완료된 후에만 실제 지도를 그립니다. (타이밍 버그 완벽 차단)
+  useEffect(() => {
+    if (!isScriptLoaded || !window.naver || !window.naver.maps) return;
 
     // 송파 루이비스컨벤션 정확한 좌표
     const weddingLocation = new window.naver.maps.LatLng(37.483446, 127.121543);
 
-    // 2. DOM이 확실하게 준비되었는지 다시 조준
-    const mapContainer = document.getElementById("map");
-    if (!mapContainer) return;
-
-    // 기존 찌꺼기 청소
-    mapContainer.innerHTML = "";
-
-    // 3. 🗺️ 지도 인스턴스 생성 (강제 렌더링 옵션 추가)
     const map = new window.naver.maps.Map("map", {
       center: weddingLocation,
       zoom: 16,
       zoomControl: false,
-      scrollWheel: false,
+      scrollWheel: false, 
     });
 
-    // 4. 📌 순정 핀 꽂기
+    // 순정 핀 하나만 딱 꽂기
     new window.naver.maps.Marker({
       map: map,
       position: weddingLocation,
     });
-
-    // ⚠️ [강제 리사이즈 트리거] 
-    // 간혹 레이아웃이 늦게 잡혀 지도가 깨지는 현상을 방지하기 위해 엔진을 새로고침합니다.
-    window.naver.maps.Event.trigger(map, 'resize');
-    map.setCenter(weddingLocation);
-
-  }, []); 
+  }, [isScriptLoaded]);
 
   return (
-    <section className="px-8 py-12 text-center w-full block">
+    <section className="px-8 py-12 text-center">
       <p className="text-xs tracking-[0.3em] text-lime mb-2">LOCATION</p>
       <h2 className="text-xl mb-6">오시는 길</h2>
 
-      {/* --- 💡 [전면 수정] 하얀 공백 현상을 찢어버리는 강제 스타일링 구역 --- */}
-      <div className="rounded-2xl overflow-hidden shadow-lg mb-4 bg-card w-full relative z-10">
+      <div className="rounded-2xl overflow-hidden shadow-lg mb-4 bg-card">
+        {/* 지도가 그려질 캔버스 영역 */}
         <div 
           id="map" 
-          className="w-full"
-          style={{ 
-            width: "100%", 
-            height: "250px",          // 높이를 250px로 깡으로 고정
-            minHeight: "250px",       // 레이아웃이 짜부라지는 것 방지
-            display: "block",         // 투명 인간 취급 방지
-            backgroundColor: "#eaeaea" // 혹시 안 뜰 때를 대비한 회색 베이스 바닥
-          }} 
+          style={{ width: "100%", height: "224px", backgroundColor: "#f5f5f5" }} 
         />
       </div>
-      {/* ------------------------------------------------------------------- */}
 
       <p className="font-serif-ko text-sm text-foreground/90 leading-relaxed">{ADDRESS}</p>
       <p className="text-xs text-foreground/60 mt-1">루이비스컨벤션 · B1층</p>
