@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
     ],
     script: [
       {
-        src: "https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ncp_iam_BPAMKR5CxSLIbgJIlD3z",
+        src: "https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5v6tozs9n6",
         type: "text/javascript",
       },
     ],
