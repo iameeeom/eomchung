@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { MapPin, Car, Bus, Train } from "lucide-react";
 
 declare global {
@@ -10,57 +10,33 @@ declare global {
 const ADDRESS = "서울 송파구 법원로9길 26 H비즈니스파크 D동 루이비스컨벤션 B1층";
 
 export function Location() {
-  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
-
   useEffect(() => {
-    // 1. 이미 스크립트가 로드되어 있다면 재실행 방지
-    if (window.naver && window.naver.maps) {
-      setIsScriptLoaded(true);
-      return;
-    }
-
-    // 2. 🚀 네이버 지도 스크립트를 동적으로 직접 헤드에 꽂아버립니다.
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    // ⚠️여기에 Heeseung님이 발급받으신 진짜 ID '5v6tozs9n6'를 완벽하게 고정해 놨습니다.
-    script.src = "https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5v6tozs9n1";
-    script.async = true;
-
-    // 스크립트 로드가 완료되면 상태를 true로 바꿉니다.
-    script.onload = () => {
-      setIsScriptLoaded(true);
-    };
-
-    document.head.appendChild(script);
-
-    return () => {
-      // 컴포넌트가 언마운트될 때 안전하게 정리
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
-    };
-  }, []);
-
-  // 3. 네이버 지도 스크립트 로드가 완료된 후에만 실제 지도를 그립니다. (타이밍 버그 완벽 차단)
-  useEffect(() => {
-    if (!isScriptLoaded || !window.naver || !window.naver.maps) return;
-
-    // 송파 루이비스컨벤션 정확한 좌표
+    // 📍 송파 루이비스컨벤션 정확한 좌표
     const weddingLocation = new window.naver.maps.LatLng(37.483446, 127.121543);
 
-    const map = new window.naver.maps.Map("map", {
-      center: weddingLocation,
-      zoom: 16,
-      zoomControl: false,
-      scrollWheel: false, 
-    });
+    // 1. 🚀 [핵심 방어 코드] 이미 지도가 그려져 있다면 새로 그리지 않고 탈출합니다.
+    // 이 처리를 안 해주면 화면이 바뀔 때마다 지도를 중복으로 그려서 네이버가 인증을 차단합니다.
+    const mapContainer = document.getElementById("map");
+    if (mapContainer && mapContainer.hasChildNodes()) {
+      return; 
+    }
 
-    // 순정 핀 하나만 딱 꽂기
-    new window.naver.maps.Marker({
-      map: map,
-      position: weddingLocation,
-    });
-  }, [isScriptLoaded]);
+    // 2. 네이버 지도 스크립트가 로드되었는지 확인 후 지도 생성
+    if (window.naver && window.naver.maps) {
+      const map = new window.naver.maps.Map("map", {
+        center: weddingLocation,
+        zoom: 16,
+        zoomControl: false,
+        scrollWheel: false,
+      });
+
+      // 순정 핀 하나만 딱 꽂기
+      new window.naver.maps.Marker({
+        map: map,
+        position: weddingLocation,
+      });
+    }
+  }, []); // 빈 배열을 두어 컴포넌트가 처음 마운트될 때 딱 한 번만 실행되도록 묶음
 
   return (
     <section className="px-8 py-12 text-center">
@@ -68,7 +44,7 @@ export function Location() {
       <h2 className="text-xl mb-6">오시는 길</h2>
 
       <div className="rounded-2xl overflow-hidden shadow-lg mb-4 bg-card">
-        {/* 지도가 그려질 캔버스 영역 */}
+        {/* 지도가 그려질 영역 */}
         <div 
           id="map" 
           style={{ width: "100%", height: "224px", backgroundColor: "#f5f5f5" }} 
