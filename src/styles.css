@@ -65,8 +65,10 @@
   --color-lime: var(--lime);
   --color-lime-foreground: var(--lime-foreground);
   --color-paper: var(--paper);
-  --font-sans: 'Noto Sans KR', sans-serif;
-  --font-serif: 'Gowun Batang', serif;
+  /*--font-sans: 'Noto Sans KR', sans-serif;
+  --font-serif: 'Gowun Batang', serif;*/
+  --font-sans: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  --font-serif: 'Gowun Batang', Georgia, serif;
 }
 
 :root {
