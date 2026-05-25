@@ -23,7 +23,7 @@ export function Location() {
     const script = document.createElement("script");
     script.type = "text/javascript";
     // ⚠️여기에 Heeseung님이 발급받으신 진짜 ID '5v6tozs9n6'를 완벽하게 고정해 놨습니다.
-    script.src = "https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5v6tozs9n1";
+    script.src = "https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=5v6tozs9n1";
     script.async = true;
 
     // 스크립트 로드가 완료되면 상태를 true로 바꿉니다.

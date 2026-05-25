@@ -27,7 +27,7 @@ script: [
         // ⚠️ [핵심 변경 포인트] 
         // 일반 openapi 주소가 아니라, 네이버 클라우드 플랫폼(NCP) 전용 주소인 'openapi.map.naver.com/openapi/v3/maps.js' 형식으로 정확히 호출합니다.
         // ncpClientId 파라미터 뒤에 Heeseung님의 진짜 ID '5v6tozs9n6'를 완벽하게 결합했습니다.
-        src: "https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5v6tozs9n1",
+        src: "https://openapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=5v6tozs9n1",
         type: "text/javascript",
       },
     ],
