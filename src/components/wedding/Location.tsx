@@ -100,28 +100,42 @@ export function Location() {
 
       {/* 교통 정보 영역 */}
       <div className="mt-6 text-left bg-secondary/40 rounded-xl p-4 space-y-3">
+        {/* 1. 셔틀버스 */}
         <div className="flex gap-3">
           <Bus className="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
           <div>
-            <p className="text-xs text-lime mb-1">셔틀버스</p>
-            <p className="text-xs text-foreground/80">8호선 문정역 4번 출구 앞 셔틀버스 10분 배차 운행</p>
+            <p className="text-xs text-lime mb-1 font-bold">셔틀버스</p>
+            {/* 🚀 여기를 ul과 li로 쪼개어 불릿 점을 만듭니다 */}
+            <ul className="list-disc list-inside text-xs text-foreground/80 space-y-0.5">
+              <li>8호선 문정역 4번 출구 앞 탑승</li>
+              <li>셔틀버스 10분 배차 운행</li>
+            </ul>
           </div>
         </div>
+
+        {/* 2. 대중교통 */}
         <div className="flex gap-3">
           <Train className="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
           <div>
-            <p className="text-xs text-lime mb-1">대중교통</p>
-            <p className="text-xs text-foreground/80">
-            지하철 8호선 문정역 4번 출구 도보 10분
-            <br />
-            버스 이용시 문정로데오거리 하차</p>
+            <p className="text-xs text-lime mb-1 font-bold">대중교통</p>
+            {/* 🚀 <br /> 대신 li 태그로 한 줄씩 분리 */}
+            <ul className="list-disc list-inside text-xs text-foreground/80 space-y-0.5">
+              <li>지하철 8호선 문정역 4번 출구 도보 10분</li>
+              <li>버스 이용 시 문정로데오거리 하차</li>
+            </ul>
           </div>
         </div>
+
+        {/* 3. 주차 안내 */}
         <div className="flex gap-3">
           <Car className="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
           <div>
-            <p className="text-xs text-lime mb-1">주차 안내</p>
-            <p className="text-xs text-foreground/80">건물 내 지하 주차장 이용 (2시간 무료 / 최대 1,300대 수용)</p>
+            <p className="text-xs text-lime mb-1 font-bold">주차 안내</p>
+            {/* 🚀 긴 문장을 불릿으로 정돈 */}
+            <ul className="list-disc list-inside text-xs text-foreground/80 space-y-0.5">
+              <li>건물 내 지하 주차장 이용</li>
+              <li>2시간 무료 (최대 1,300대 수용)</li>
+            </ul>
           </div>
         </div>
       </div>
