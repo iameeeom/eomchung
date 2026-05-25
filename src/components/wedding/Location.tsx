@@ -78,25 +78,25 @@ export function Location() {
       <p className="font-serif-ko text-sm text-foreground/90 leading-relaxed">서울 송파구 법원로9길 26 H비즈니스파크 D동 B1층</p>
 
       {/* 버튼 영역 */}
-      <div className="flex gap-2 mt-5">
-        <a
-          href="https://map.naver.com/p/search/%EB%A3%A8%EC%9D%B4%EB%B9%84%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98%EC%86%A1%ED%8C%8C%EB%AC%B8%EC%A0%95?c=17.56,0,0,0,dh"
-          target="_blank" rel="noreferrer"
-          className="flex-1 py-3 rounded-xl bg-[#e8ece9] text-lime text-sm hover:bg-[#dee4df] transition text-center flex items-center justify-center font-medium"
-        >
-          <MapPin className="inline h-4 w-4 mr-1 flex-shrink-0" />
-          네이버 지도
-        </a>
-
-        <a
-          href="https://map.kakao.com/?urlX=509316&urlY=1107616&itemId=&q=%EB%A3%A8%EC%9D%B4%EB%B9%84%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98&srcid=&map_type=TYPE_MAP"
-          target="_blank" rel="noreferrer"
-          className="flex-1 py-3 rounded-xl bg-[#e8ece9] text-lime text-sm hover:bg-[#dee4df] transition text-center flex items-center justify-center font-medium"
-        >
-          <MapPin className="inline h-4 w-4 mr-1 flex-shrink-0" />
-          카카오 지도
-        </a>
-      </div>
+<div className="flex gap-2 mt-5">
+  <a
+    href="https://map.naver.com/p/search/%EB%A3%A8%EC%9D%B4%EB%B9%84%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98%EC%86%A1%ED%8C%8C%EB%AC%B8%EC%A0%95?c=17.56,0,0,0,dh"
+    target="_blank" rel="noreferrer"
+    className="flex-1 py-3 rounded-xl bg-[#f4f0e6] border border-lime/15 text-lime text-sm hover:bg-[#eae4d5] transition text-center flex items-center justify-center font-medium shadow-sm"
+  >
+    <MapPin className="inline h-4 w-4 mr-1 flex-shrink-0" />
+    네이버 지도
+  </a>
+  
+  <a
+    href="https://map.kakao.com/?urlX=509316&urlY=1107616&itemId=&q=%EB%A3%A8%EC%9D%B4%EB%B9%84%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98&srcid=&map_type=TYPE_MAP"
+    target="_blank" rel="noreferrer"
+    className="flex-1 py-3 rounded-xl bg-[#f4f0e6] border border-lime/15 text-lime text-sm hover:bg-[#eae4d5] transition text-center flex items-center justify-center font-medium shadow-sm"
+  >
+    <MapPin className="inline h-4 w-4 mr-1 flex-shrink-0" />
+    카카오 지도
+  </a>
+</div>
 
       {/* 교통 정보 영역 */}
       <div className="mt-6 text-left bg-secondary/40 rounded-xl p-4 space-y-3">
