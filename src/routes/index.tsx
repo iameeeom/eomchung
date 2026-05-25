@@ -22,12 +22,6 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "2026.10.24 (토) 18시\n\n루이비스컨벤션 송파문정" },
       { property: "og:image", content: "https://pub-8f580169132843aba335fb45f2847fd7.r2.dev/ogimage.jpg"},
     ],
-    script: [
-      {
-        src: "https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5v6tozs9n6",
-        type: "text/javascript",
-      },
-    ],
   }),
   component: Index,
 });
