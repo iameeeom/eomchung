@@ -97,7 +97,6 @@
   --lime-foreground: oklch(0.98 0.008 90);
   --paper: oklch(0.95 0.01 90);
 }
-
 .dark {
   --background: oklch(0.98 0.008 90);
   --foreground: oklch(0.38 0.07 150);
@@ -114,7 +113,7 @@
 }
 
 @layer utilities {
-  .font-serif-ko { font-family: 'Gowun Batang', serif; }
+  .font-serif-ko { font-family: 'Gowun Batang', serif !important; } /* 🚀 중요도 강제 상향 */
   .text-lime { color: var(--lime); }
   .bg-lime { background-color: var(--lime); color: var(--lime-foreground); }
   .border-lime { border-color: var(--lime); }
