@@ -36,6 +36,37 @@
   --font-sans: 'Noto Sans KR', sans-serif;
   --font-serif: 'Gowun Batang', serif;
 }
+/* 1. 고운바탕 (Gowun Batang) 강제 로드 */
+@font-face {
+  font-family: 'Gowun Batang';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/gowunbatang/v5/3ieoGxF_Y4al9U9T3e18Z1pP6L6vx2A.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Gowun Batang';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/gowunbatang/v5/3ieoGxF_Y4al9U9T3e18Z1pP6L6vx30.woff2') format('woff2');
+}
+
+/* 2. Noto Sans KR (고딕) 강제 로드 */
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/notosanskr/v37/PbykFmXiEBPT4ITbgNA5Cjmpb0m_AM_xVpx4Kg.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/notosanskr/v37/PbykFmXiEBPT4ITbgNA5Cjmpb0m_AM_xUpx4Kg.woff2') format('woff2');
+}
 
 :root {
   --radius: 0.75rem;
