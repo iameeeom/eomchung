@@ -54,11 +54,11 @@ function Index() {
       <Divider />
       <Location />
       <Divider />
-      <Venue />
+      {/*<Venue />*/}
       <Divider />
       <Account />
       <Divider />
-      <RSVP />
+      {/*<<RSVP />*/}
       <Divider />
       <Guestbook />
       <Divider />
