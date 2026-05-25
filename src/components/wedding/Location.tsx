@@ -7,8 +7,6 @@ declare global {
   }
 }
 
-const ADDRESS = "서울 송파구 법원로9길 26 H비즈니스파크 D동 루이비스컨벤션 B1층";
-
 export function Location() {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
 
@@ -75,8 +73,8 @@ export function Location() {
         />
       </div>
 
-      <p className="font-serif-ko text-sm text-foreground/90 leading-relaxed">{ADDRESS}</p>
-      <p className="text-xs text-foreground/60 mt-1">루이비스컨벤션 · B1층</p>
+      <p className="font-serif-ko text-sm text-foreground/90 leading-relaxed">서울 송파구 법원로9길 26 H비즈니스파크 D동</p>
+      <p className="font-serif-ko text-sm text-foreground/90 leading-relaxed">루이비스컨벤션 · B1층</p>
 
       {/* 버튼 영역 */}
       <div className="flex gap-2 mt-5">
@@ -110,7 +108,7 @@ export function Location() {
           <Train className="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
           <div>
             <p className="text-xs text-lime mb-1">대중교통</p>
-            <p className="text-xs text-foreground/80">지하철 8호선 문정역 4번 출구 도보 10분 / 버스 이용시 문정로데오거리 하차</p>
+            <p className="text-xs text-foreground/80">지하철 8호선 문정역 4번 출구 도보 10분 \n 버스 이용시 문정로데오거리 하차</p>
           </div>
         </div>
         <div className="flex gap-3">
