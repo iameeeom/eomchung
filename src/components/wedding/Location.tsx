@@ -1,28 +1,58 @@
+import { useEffect } from "react";
 import { MapPin, Car, Bus, Train } from "lucide-react";
+
+// TypeScript에서 window.naver를 인식하지 못해 발생하는 컴파일 에러를 방지합니다.
+declare global {
+  interface Window {
+    naver: any;
+  }
+}
 
 const ADDRESS = "서울 송파구 법원로9길 26 H비즈니스파크 D동 루이비스컨벤션 B1층";
 
 export function Location() {
-return (
+  
+  useEffect(() => {
+    // 코드가 실행될 때 네이버 라이브러리가 메모리에 정상 로드되었는지 체크합니다.
+    if (!window.naver || !window.naver.maps) return;
+
+    // 1. 📍 송파 루이비스컨벤션의 실제 정확한 위도, 경도 좌표입니다.
+    const weddingLocation = new window.naver.maps.LatLng(37.483446, 127.121543);
+
+    // 2. 🗺️ 네이버 지도 생성 및 옵션 튜닝
+    const map = new window.naver.maps.Map("map", {
+      center: weddingLocation,
+      zoom: 16,           // 하객들이 보기에 가장 직관적인 확대 비율
+      zoomControl: false, // 지도 확대/축소(+/-) UI 바를 치워 디자인을 깔끔하게 유지합니다.
+      scrollWheel: false, // ⚠️ 모바일 청첩장을 스크롤할 때 지도가 멋대로 확대/축소되는 현상을 방지합니다.
+    });
+
+    // 3. 📌 글자 박스가 없는 '순정 물방울 핀' 하나만 딱 꽂습니다.
+    new window.naver.maps.Marker({
+      map: map,
+      position: weddingLocation,
+    });
+  }, []);
+
+  return (
     <section className="px-8 py-12 text-center">
       <p className="text-xs tracking-[0.3em] text-lime mb-2">LOCATION</p>
       <h2 className="text-xl mb-6">오시는 길</h2>
 
-      {/* --- 구글 지도로 수정된 부분 시작 --- */}
+      {/* --- 💡 구글 iframe을 걷어내고 네이버 지도가 그려질 캔버스로 전면 수정 --- */}
       <div className="rounded-2xl overflow-hidden shadow-lg mb-4 bg-card">
-        <iframe
-          title="google map"
-          src="https://maps.google.com/maps?q=서울 송파구 법원로9길 26 루이비스컨벤션&t=&z=16&ie=UTF8&iwloc=&output=embed"
-          className="w-full h-56 border-0"
-          loading="lazy"
+        <div 
+          id="map" 
+          className="w-full h-56" 
+          style={{ width: "100%", height: "224px" }} 
         />
       </div>
-      {/* --- 구글 지도로 수정된 부분 끝 --- */}
+      {/* ----------------------------------------------------------- */}
 
       <p className="font-serif-ko text-sm text-foreground/90 leading-relaxed">{ADDRESS}</p>
       <p className="text-xs text-foreground/60 mt-1">루이비스컨벤션 · B1층</p>
 
-      {/* --- 버튼 수정된 부분 시작 --- */}
+      {/* --- 버튼 영역 --- */}
       <div className="flex gap-2 mt-5">
         <a
           href="https://map.naver.com/p/search/%EB%A3%A8%EC%9D%B4%EB%B9%84%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98%EC%86%A1%ED%8C%8C%EB%AC%B8%EC%A0%95?c=17.56,0,0,0,dh"
@@ -40,8 +70,8 @@ return (
           카카오 지도
         </a>
       </div>
-      {/* --- 버튼 수정된 부분 끝 --- */}
 
+      {/* --- 교통 정보 영역 --- */}
       <div className="mt-6 text-left bg-secondary/40 rounded-xl p-4 space-y-3">
         <div className="flex gap-3">
           <Bus className="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
