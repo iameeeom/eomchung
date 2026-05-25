@@ -46,7 +46,7 @@ export function Location() {
     if (!isScriptLoaded || !window.naver || !window.naver.maps) return;
 
     // 송파 루이비스컨벤션 정확한 좌표
-    const weddingLocation = new window.naver.maps.LatLng(37.484174517, 127.11680041);
+    const weddingLocation = new window.naver.maps.LatLng(37.48438024565673, 127.1173173365993);
 
     const map = new window.naver.maps.Map("map", {
       center: weddingLocation,
