@@ -82,19 +82,21 @@ export function Location() {
         <a
           href="https://map.naver.com/p/search/%EB%A3%A8%EC%9D%B4%EB%B9%84%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98%EC%86%A1%ED%8C%8C%EB%AC%B8%EC%A0%95?c=17.56,0,0,0,dh"
           target="_blank" rel="noreferrer"
-          className="flex-1 py-3 rounded-xl border border-lime/40 text-lime text-sm hover:bg-lime hover:text-lime-foreground transition text-center"
+          className="flex-1 py-3 rounded-xl bg-white border border-lime/30 text-lime text-sm hover:bg-lime/5 transition text-center flex items-center justify-center font-medium shadow-sm"
         >
+          <MapPin className="inline h-4 w-4 mr-1 flex-shrink-0" />
           네이버 지도
         </a>
+
         <a
           href="https://map.kakao.com/?urlX=509316&urlY=1107616&itemId=&q=%EB%A3%A8%EC%9D%B4%EB%B9%84%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98&srcid=&map_type=TYPE_MAP"
           target="_blank" rel="noreferrer"
-          className="flex-1 py-3 rounded-xl bg-lime text-lime-foreground text-sm font-medium hover:opacity-90 transition text-center flex items-center justify-center"
+          className="flex-1 py-3 rounded-xl bg-white border border-lime/30 text-lime text-sm hover:bg-lime/5 transition text-center flex items-center justify-center font-medium shadow-sm"
         >
-          <MapPin className="inline h-4 w-4 mr-1" />
+          <MapPin className="inline h-4 w-4 mr-1 flex-shrink-0" />
           카카오 지도
         </a>
-      </div>
+      </div>  
 
       {/* 교통 정보 영역 */}
       <div className="mt-6 text-left bg-secondary/40 rounded-xl p-4 space-y-3">
