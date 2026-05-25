@@ -80,7 +80,7 @@ export function Location() {
      {/* 버튼 영역 */}
       <div className="flex gap-2 mt-5">
         <a
-          href="https://map.naver.com/p/search/%EB%A3%A8%EC%9D%B4%EB%B9%84%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98%EC%86%A1%ED%8C%8C%EB%AC%B8%EC%A0%95?c=17.56,0,0,0,dh"
+          href="https://map.naver.com/p/search/%EB%A3%A8%EC%9D%B4%EB%B9%84%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98%EC%86%A1%ED%8C%8C%EB%AC%B8%EC%A0%95/place/1593629691?c=15.00,0,0,0,dh&placePath=/home?bk_query=%EB%A3%A8%EC%9D%B4%EB%B9%84%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98%EC%86%A1%ED%8C%8C%EB%AC%B8%EC%A0%95&entry=bmp&from=map&fromPanelNum=2&timestamp=202605252019&locale=ko&svcName=map_pcv5&searchText=%EB%A3%A8%EC%9D%B4%EB%B9%84%EC%8A%A4%EC%BB%A8%EB%B2%A4%EC%85%98%EC%86%A1%ED%8C%8C%EB%AC%B8%EC%A0%95"
           target="_blank" rel="noreferrer"
           className="flex-1 py-3 rounded-xl bg-lime border border-lime/20 text-lime-foreground text-sm hover:opacity-90 transition text-center flex items-center justify-center font-medium shadow-md"
         >
@@ -106,7 +106,7 @@ export function Location() {
           <div>
             <p className="text-xs text-lime mb-1 font-bold">셔틀버스</p>
             {/* 🚀 여기를 ul과 li로 쪼개어 불릿 점을 만듭니다 */}
-            <ul className="list-disc list-inside text-xs text-foreground/80 sspace-y-1 marker:text-foreground/40">
+            <ul className="list-disc list-inside text-xs text-foreground/80 space-y-1 marker:text-foreground/40">
               <li>8호선 문정역 4번 출구 앞 탑승</li>
               <li>셔틀버스 10분 배차 운행</li>
             </ul>
