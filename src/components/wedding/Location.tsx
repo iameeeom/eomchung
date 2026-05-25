@@ -73,7 +73,8 @@ export function Location() {
         />
       </div>
 
-      <p className="font-serif-ko text-sm text-foreground/90 leading-relaxed">루이비스컨벤션 송파문정 B1 그레이스홀</p>
+      <p className="font-serif-ko text-sm text-foreground/90 leading-relaxed">
+      <strong>루이비스컨벤션 송파문정 B1 그레이스홀</strong></p>
       <p className="font-serif-ko text-sm text-foreground/90 leading-relaxed">서울 송파구 법원로9길 26 H비즈니스파크 D동 B1층</p>
 
       {/* 버튼 영역 */}
@@ -118,7 +119,7 @@ export function Location() {
           <Car className="h-4 w-4 text-lime flex-shrink-0 mt-0.5" />
           <div>
             <p className="text-xs text-lime mb-1">주차 안내</p>
-            <p className="text-xs text-foreground/80">건물 내 지하 주차장 이용 (2시간 무료), 최대 1,300대 수용</p>
+            <p className="text-xs text-foreground/80">건물 내 지하 주차장 이용 (2시간 무료 / 최대 1,300대 수용)</p>
           </div>
         </div>
       </div>
